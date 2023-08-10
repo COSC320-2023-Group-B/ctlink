@@ -1,6 +1,5 @@
 #include <iostream>
 #include <ctlib/caretaker_static.h>
-#include <winkit/SetupAPI.h>
 
 void LIBCTAPI on_device_discovered(libct_context_t* context, libct_device_t* device)
 {
