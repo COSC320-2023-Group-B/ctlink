@@ -1,2 +1,21 @@
-﻿  main.cpp
+﻿  libcaretaker_static.lib(core.obj) : MSIL .netmodule or module compiled with /GL found; restarting link with /LTCG; add /LTCG to the link command line to improve linker performance
+LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/LTCG' specification
+  Generating code
+  Finished generating code
+libcaretaker_static.lib(core.obj) : warning LNK4099: PDB 'libcaretaker_static.pdb' was not found with 'libcaretaker_static.lib(core.obj)' or at 'C:\Users\josh\source\repos\ctlink\Debug\libcaretaker_static.pdb'; linking object as if no debug info
+libcaretaker_static.lib(win_os.obj) : warning LNK4099: PDB 'libcaretaker_static.pdb' was not found with 'libcaretaker_static.lib(win_os.obj)' or at 'C:\Users\josh\source\repos\ctlink\Debug\libcaretaker_static.pdb'; linking object as if no debug info
+libcaretaker_static.lib(glue.obj) : warning LNK4099: PDB 'libcaretaker_static.pdb' was not found with 'libcaretaker_static.lib(glue.obj)' or at 'C:\Users\josh\source\repos\ctlink\Debug\libcaretaker_static.pdb'; linking object as if no debug info
+libcaretaker_static.lib(device.obj) : warning LNK4099: PDB 'libcaretaker_static.pdb' was not found with 'libcaretaker_static.lib(device.obj)' or at 'C:\Users\josh\source\repos\ctlink\Debug\libcaretaker_static.pdb'; linking object as if no debug info
+libcaretaker_static.lib(win_ble.obj) : warning LNK4099: PDB 'libcaretaker_static.pdb' was not found with 'libcaretaker_static.lib(win_ble.obj)' or at 'C:\Users\josh\source\repos\ctlink\Debug\libcaretaker_static.pdb'; linking object as if no debug info
+libcaretaker_static.lib(ct_util.obj) : warning LNK4099: PDB 'libcaretaker_static.pdb' was not found with 'libcaretaker_static.lib(ct_util.obj)' or at 'C:\Users\josh\source\repos\ctlink\Debug\libcaretaker_static.pdb'; linking object as if no debug info
+libcaretaker_static.lib(stream.obj) : warning LNK4099: PDB 'libcaretaker_static.pdb' was not found with 'libcaretaker_static.lib(stream.obj)' or at 'C:\Users\josh\source\repos\ctlink\Debug\libcaretaker_static.pdb'; linking object as if no debug info
+libcaretaker_static.lib(ble_caretaker.obj) : warning LNK4099: PDB 'libcaretaker_static.pdb' was not found with 'libcaretaker_static.lib(ble_caretaker.obj)' or at 'C:\Users\josh\source\repos\ctlink\Debug\libcaretaker_static.pdb'; linking object as if no debug info
+libcaretaker_static.lib(win_ble_api.obj) : warning LNK4099: PDB 'libcaretaker_static.pdb' was not found with 'libcaretaker_static.lib(win_ble_api.obj)' or at 'C:\Users\josh\source\repos\ctlink\Debug\libcaretaker_static.pdb'; linking object as if no debug info
+libcaretaker_static.lib(bg_ble_api.obj) : warning LNK4099: PDB 'libcaretaker_static.pdb' was not found with 'libcaretaker_static.lib(bg_ble_api.obj)' or at 'C:\Users\josh\source\repos\ctlink\Debug\libcaretaker_static.pdb'; linking object as if no debug info
+libcaretaker_static.lib(ti_ble_api.obj) : warning LNK4099: PDB 'libcaretaker_static.pdb' was not found with 'libcaretaker_static.lib(ti_ble_api.obj)' or at 'C:\Users\josh\source\repos\ctlink\Debug\libcaretaker_static.pdb'; linking object as if no debug info
+libcaretaker_static.lib(marshalling.obj) : warning LNK4099: PDB 'libcaretaker_static.pdb' was not found with 'libcaretaker_static.lib(marshalling.obj)' or at 'C:\Users\josh\source\repos\ctlink\Debug\libcaretaker_static.pdb'; linking object as if no debug info
+libcaretaker_static.lib(ct_core.obj) : warning LNK4099: PDB 'libcaretaker_static.pdb' was not found with 'libcaretaker_static.lib(ct_core.obj)' or at 'C:\Users\josh\source\repos\ctlink\Debug\libcaretaker_static.pdb'; linking object as if no debug info
+libcaretaker_static.lib(ct_exec.obj) : warning LNK4099: PDB 'libcaretaker_static.pdb' was not found with 'libcaretaker_static.lib(ct_exec.obj)' or at 'C:\Users\josh\source\repos\ctlink\Debug\libcaretaker_static.pdb'; linking object as if no debug info
+libcaretaker_static.lib(bg_cmd_def.obj) : warning LNK4099: PDB 'libcaretaker_static.pdb' was not found with 'libcaretaker_static.lib(bg_cmd_def.obj)' or at 'C:\Users\josh\source\repos\ctlink\Debug\libcaretaker_static.pdb'; linking object as if no debug info
+libcaretaker_static.lib(ti_cmd_def.obj) : warning LNK4099: PDB 'libcaretaker_static.pdb' was not found with 'libcaretaker_static.lib(ti_cmd_def.obj)' or at 'C:\Users\josh\source\repos\ctlink\Debug\libcaretaker_static.pdb'; linking object as if no debug info
   ctlink.vcxproj -> C:\Users\josh\source\repos\ctlink\Debug\ctlink.exe
