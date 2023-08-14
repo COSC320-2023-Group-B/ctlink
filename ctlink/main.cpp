@@ -18,10 +18,10 @@ int main() {
 
 	// libct_init requires a pointer to an empty context, initialisation data, and callback functions
 	// callback functions must implement the following functions at least, and the non-implemented must be NULL:
-	//   on_device_discovered()
-	//   on_device_connected_ready()
-	//   on_device_disconnected()
-	//   on_data_received()
+	// on_device_discovered(context, device);
+	// on_device_connected_ready(context, device);
+	// on_device_disconnected(context, device);
+	// on_data_received(context, device, data);
 	int status = libct_init(&context, &init_data, &callbacks);
 	if (LIBCT_FAILED(status)) {
 		// Handle error
