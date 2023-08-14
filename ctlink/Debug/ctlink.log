@@ -1,7 +1,4 @@
-﻿  main.cpp
-  callback.cpp
-  Generating Code...
-callback.obj : error LNK2005: "void __stdcall on_data_received(struct libct_context_t *,struct libct_device_t *,struct libct_stream_data_t *)" (?on_data_received@@YGXPAUlibct_context_t@@PAUlibct_device_t@@PAUlibct_stream_data_t@@@Z) already defined in main.obj
+﻿callback.obj : error LNK2005: "void __stdcall on_data_received(struct libct_context_t *,struct libct_device_t *,struct libct_stream_data_t *)" (?on_data_received@@YGXPAUlibct_context_t@@PAUlibct_device_t@@PAUlibct_stream_data_t@@@Z) already defined in main.obj
 callback.obj : error LNK2005: "void __stdcall on_device_connected_ready(struct libct_context_t *,struct libct_device_t *)" (?on_device_connected_ready@@YGXPAUlibct_context_t@@PAUlibct_device_t@@@Z) already defined in main.obj
 callback.obj : error LNK2005: "void __stdcall on_device_disconnected(struct libct_context_t *,struct libct_device_t *)" (?on_device_disconnected@@YGXPAUlibct_context_t@@PAUlibct_device_t@@@Z) already defined in main.obj
 callback.obj : error LNK2005: "void __stdcall on_device_discovered(struct libct_context_t *,struct libct_device_t *)" (?on_device_discovered@@YGXPAUlibct_context_t@@PAUlibct_device_t@@@Z) already defined in main.obj

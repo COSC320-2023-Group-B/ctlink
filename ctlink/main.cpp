@@ -1,7 +1,7 @@
 #include <iostream>
 #include <ctlib/caretaker_static.h>
 
-#include "callback.cpp"
+#include "callback.h"
 
 int main() {
 	libct_context_t* context = NULL;
