@@ -22,6 +22,8 @@
 
 # Directories
 .vs
+Debug
+ctlink/Debug
 
 
 ## Ignore Visual Studio temporary files, build results, and
