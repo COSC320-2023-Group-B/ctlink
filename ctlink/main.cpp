@@ -25,11 +25,11 @@ int main() {
 	int status = libct_init(&context, &init_data, &callbacks);
 	if (LIBCT_FAILED(status)) {
 		// Handle error
-		std::cerr << "Error: Failed to intialise caretaker context";
+		std::cerr << "Error: Failed to initialise caretaker context\n";
 	}
-	else {
-		std::cout << "Successfully initialised caretaker context!";
-	}
+	
+	std::cout << "Successfully initialised caretaker context!\n";
+	libct_start_discovery(context, 20000);
 
 
 	return 0;
