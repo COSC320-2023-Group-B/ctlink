@@ -36,15 +36,37 @@ libct_context_t *get_init_context() {
 	return context;
 }
 
+void discover_devices(libct_context_t* context) {
+	const int SEARCH_TIME = 20000;
+
+	int status = libct_start_discovery(context, SEARCH_TIME);
+
+	if (LIBCT_FAILED(status)) {
+		// did not discover devices
+		throw std::runtime_error("Could not discover devices");
+	}
+}
+
 
 int main(int argc, char* argv[]) {
 	// I want to make this a argument based program, aka "ctlink.exe discover" to print a list of discoverable devices
-	std::cout << "argc count: " << argc << std::endl;
-	std::cout << "argv[0]: " << argv[0] << std::endl;
+	// temp arg printing from stack overflow
+	std::cout << "Have " << argc << " arguments:" << std::endl;
+	for (int i = 0; i < argc; ++i) {
+		std::cout << argv[i] << std::endl;
+	}
 
-	libct_context_t* context = get_init_context();
+	// want to make a better system for handleing errors. maybe dont use the throw syntax? and just cerr out
+	try {
+		libct_context_t* context = get_init_context();
 
-	libct_start_discovery(context, 20000);
+		discover_devices(context);
+	}
+	catch (const std::exception& e) {
+		std::cerr << "Error: " << e.what() << std::endl;
+		return 1;
+	}
 
+	std::cout << "Dose not error" << std::endl;
 	return 0;
 }
