@@ -3,7 +3,8 @@
 
 #include "callback.h"
 
-int main() {
+
+libct_context_t *get_init_context() {
 	libct_context_t* context = NULL;
 
 	libct_init_data_t init_data;
@@ -25,13 +26,23 @@ int main() {
 	int status = libct_init(&context, &init_data, &callbacks);
 	if (LIBCT_FAILED(status)) {
 		// Handle error
-		std::cerr << "Error: Failed to initialise caretaker context" << std::endl;
 
 		// can you handle this error? just crash
-		return 1;
+		throw std::runtime_error( "Failed to initialise caretaker context" );
 	}
-	
+
 	std::cout << "Successfully initialised caretaker context!" << std::endl;
+
+	return context;
+}
+
+
+int main(int argc, char* argv[]) {
+	// I want to make this a argument based program, aka "ctlink.exe discover" to print a list of discoverable devices
+	std::cout << "argc count: " << argc << std::endl;
+	std::cout << "argv[0]: " << argv[0] << std::endl;
+
+	libct_context_t* context = get_init_context();
 
 	libct_start_discovery(context, 20000);
 
