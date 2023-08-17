@@ -16,6 +16,7 @@ libct_context_t *get_init_context() {
 	callbacks.on_device_connected_ready = on_device_connected_ready;
 	callbacks.on_device_disconnected = on_device_disconnected;
 	callbacks.on_data_received = on_data_received;
+	callbacks.on_start_measuring = on_start_measuring;
 
 	// libct_init requires a pointer to an empty context, initialisation data, and callback functions
 	// callback functions must implement the following functions at least, and the non-implemented must be NULL:
