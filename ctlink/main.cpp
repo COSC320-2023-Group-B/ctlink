@@ -1,4 +1,6 @@
 #include <iostream>
+#include <sstream>
+#include <vector>
 #include <ctlib/caretaker_static.h>
 
 #include "callback.h"
@@ -32,7 +34,7 @@ libct_context_t *get_init_context() {
 		throw std::runtime_error( "Failed to initialise caretaker context" );
 	}
 
-	std::cout << "Successfully initialised caretaker context!" << std::endl;
+	std::cout << "Successfully initialised caretaker context!" << std::endl << std::endl;
 
 	return context;
 }
@@ -49,13 +51,57 @@ void discover_devices(libct_context_t* context) {
 }
 
 
+bool is_int(const std::string& x) {
+	std::istringstream iss(x);
+	int num;
+	iss >> num;
+	return iss.eof() && !iss.fail();
+}
+
+
+// libct_device_t* instead of string
+std::string select_device(std::vector<std::string> devices) {	//only string as temp
+	std::string choice;
+	std::cout << "Discovered devices:" << std::endl;
+	for (int i = 0; i < devices.size(); ++i) {
+		std::cout << i + 1 << ") " << devices[i] << std::endl;
+	}
+	std::cout << "Enter number of device to connect:" << std::endl;
+	while (true) {
+		//user input
+		std::cin >> choice;
+		std::cout << std::endl;
+		if (!is_int(choice)) {
+			std::cout << "Please enter a number." << std::endl;
+			continue;
+		}
+		int ans = std::stoi(choice);
+		if (ans < 1 || ans > devices.size()) {
+			std::cout << "Please enter a valid number from the list." << std::endl;
+			continue;
+		}
+		std::cout << "Connecting to device: " << devices[ans - 1] << std::endl;
+		// Set device connection logic here
+		return devices[ans - 1];
+	}
+}
+
+
 int main(int argc, char* argv[]) {
-	// I want to make this a argument based program, aka "ctlink.exe discover" to print a list of discoverable devices
+	// I want to make this an argument based program, aka "ctlink.exe discover" to print a list of discoverable devices
 	// temp arg printing from stack overflow
 	std::cout << "Have " << argc << " arguments:" << std::endl;
 	for (int i = 0; i < argc; ++i) {
 		std::cout << argv[i] << std::endl;
 	}
+	std::cout << std::endl;
+
+	// select device for pairing
+	// obv move after discover_devices. just here for now as it exits early
+	// temp vec until we have devices returned from discover_devices()
+	// libct_device_t* instead of string
+	std::vector<std::string> devices = { "Alpha", "Bravo", "Charlie", "Delta", "Echo", "Foxtrot" };
+	std::string device = select_device(devices);
 
 	// want to make a better system for handleing errors. maybe dont use the throw syntax? and just cerr out
 	try {
@@ -67,7 +113,7 @@ int main(int argc, char* argv[]) {
 		std::cerr << "Error: " << e.what() << std::endl;
 		return 1;
 	}
+	std::cout << "Does not error" << std::endl;
 
-	std::cout << "Dose not error" << std::endl;
 	return 0;
 }
