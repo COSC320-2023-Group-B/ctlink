@@ -136,8 +136,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="csv_creator.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="callback.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="csv_creator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

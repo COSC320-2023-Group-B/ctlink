@@ -4,6 +4,7 @@
 #include <ctlib/caretaker_static.h>
 
 #include "callback.h"
+#include "csv_creator.h"
 
 
 libct_context_t *get_init_context() {
@@ -102,6 +103,11 @@ int main(int argc, char* argv[]) {
 	// libct_device_t* instead of string
 	std::vector<std::string> devices = { "Alpha", "Bravo", "Charlie", "Delta", "Echo", "Foxtrot" };
 	std::string device = select_device(devices);
+
+	int csv_context = 0;
+
+	create_csv_context(&csv_context, "my_csv.csv");
+	add_data_to_csv(&csv_context, "my,data,to,store");
 
 	// want to make a better system for handleing errors. maybe dont use the throw syntax? and just cerr out
 	try {

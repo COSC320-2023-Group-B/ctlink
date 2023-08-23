@@ -21,5 +21,13 @@
     <ClCompile Include="callback.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="csv_creator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="csv_creator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -422,3 +422,6 @@ FodyWeavers.xsd
 # Includes
 !Dependencies/ctlib/win32/
 !Dependencies/ctlib/win32/*
+
+# Generated csv files
+*.csv
