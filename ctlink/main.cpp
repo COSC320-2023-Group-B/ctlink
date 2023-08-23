@@ -104,9 +104,9 @@ int main(int argc, char* argv[]) {
 	std::vector<std::string> devices = { "Alpha", "Bravo", "Charlie", "Delta", "Echo", "Foxtrot" };
 	std::string device = select_device(devices);
 
-	int csv_context = 0;
+	CSV_Context csv_context;
 
-	create_csv_context(&csv_context, "my_csv.csv");
+	create_csv_context(&csv_context, "my_csv.csv", { "hope", "this", "works" });
 	add_data_to_csv(&csv_context, "my,data,to,store");
 
 	// want to make a better system for handleing errors. maybe dont use the throw syntax? and just cerr out
