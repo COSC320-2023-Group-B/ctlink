@@ -60,8 +60,8 @@ bool is_int(const std::string& x) {
 }
 
 
-// libct_device_t* instead of string
-libct_device_t* select_device(std::vector<libct_device_t*> devices) {	//only string as temp
+// user interface to select device to pair with
+libct_device_t* select_device(std::vector<libct_device_t*> devices) {
 	std::string choice;
 	std::cout << "Discovered devices:" << std::endl;
 	for (int i = 0; i < devices.size(); ++i) {
@@ -100,7 +100,7 @@ int main(int argc, char* argv[]) {
 	CSV_Provider csv_provider("my_csv.csv", { "hope", "this", "works" });
 	csv_provider.append("my,data,to,store");
 
-	libct_device_t* devices;
+	// std::vector<libct_device_t*> devices;
 
 	// want to make a better system for handleing errors. maybe dont use the throw syntax? and just cerr out
 	try {
