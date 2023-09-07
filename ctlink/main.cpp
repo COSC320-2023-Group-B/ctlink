@@ -61,11 +61,11 @@ bool is_int(const std::string& x) {
 
 
 // libct_device_t* instead of string
-std::string select_device(std::vector<std::string> devices) {	//only string as temp
+libct_device_t* select_device(std::vector<libct_device_t*> devices) {	//only string as temp
 	std::string choice;
 	std::cout << "Discovered devices:" << std::endl;
 	for (int i = 0; i < devices.size(); ++i) {
-		std::cout << i + 1 << ") " << devices[i] << std::endl;
+		std::cout << i + 1 << ") " << devices[i]->get_name << " : " << devices[i]->get_serial_number << std::endl;
 	}
 	std::cout << "Enter number of device to connect:" << std::endl;
 	while (true) {
@@ -97,27 +97,26 @@ int main(int argc, char* argv[]) {
 	}
 	std::cout << std::endl;
 
-	// select device for pairing
-	// obv move after discover_devices. just here for now as it exits early
-	// temp vec until we have devices returned from discover_devices()
-	// libct_device_t* instead of string
-	std::vector<std::string> devices = { "Alpha", "Bravo", "Charlie", "Delta", "Echo", "Foxtrot" };
-	std::string device = select_device(devices);
-
 	CSV_Provider csv_provider("my_csv.csv", { "hope", "this", "works" });
 	csv_provider.append("my,data,to,store");
+
+	libct_device_t* devices;
 
 	// want to make a better system for handleing errors. maybe dont use the throw syntax? and just cerr out
 	try {
 		libct_context_t* context = get_init_context();
 
 		discover_devices(context);
+		//this should return vector of devices
 	}
 	catch (const std::exception& e) {
 		std::cerr << "Error: " << e.what() << std::endl;
 		return 1;
 	}
 	std::cout << "Does not error" << std::endl;
+
+	// Select device for pairing
+	// libct_device_t* device = select_device(devices);
 
 	return 0;
 }
